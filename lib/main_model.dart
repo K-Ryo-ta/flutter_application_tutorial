@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final mainProvider = ChangeNotifierProvider((ref) => MainModel());
 
 class MainModel extends ChangeNotifier {
-  int a = 0;
-  void change() {
-    a = 2;
+  int counter = 0;
+
+  void incrementCounter() {
+    counter++;
     notifyListeners();
+    print("HelloWorld");
   }
 }
